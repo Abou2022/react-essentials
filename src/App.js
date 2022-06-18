@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import restaurant from './restaurant.jpg'
 
 function Header(props){
   return (
@@ -13,7 +14,10 @@ function Main(props){
   return (
     <section>
       <p> The dishes is {props.adjective}</p>
-
+    <img src={restaurant}
+    height={300}
+    alt="dish"/>
+    
       <ul style={{textAlign:'left'}}>
       {/* map will check each element inside the array */}
       {props.dishes.map((dish) => (
