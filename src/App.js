@@ -1,23 +1,54 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+
+function Header(props){
+  return (
+    <header>
+      <h1> {props.name} 's Kitchen</h1>
+    </header>
+  );
+}
+
+function Main(props){
+  return (
+    <section>
+      <p> The dishes is {props.adjective}</p>
+
+      <ul style={{textAlign:'left'}}>
+      {/* map will check each element inside the array */}
+      {props.dishes.map((dish) => (
+      <li key = {dish.id}>{dish.title}</li> 
+      ))}
+      </ul>
+    </section>
+  );
+}
+function Footer(props){
+  return (
+    <footer>
+      <p>copyright{ props.year} </p>
+    </footer>
+  );
+}
+const dishes = [
+  'Kabato and sauce feuille',
+  'riz au gras',
+  'salade',
+  'kasava'
+];
+// after arrow we nned to wrap inside the parenthese
+const dishObjects = dishes.map((dish, i) => ({ id: i, title: dish}));
+
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <Header name='Bak'  />
+     <Main adjective='amazin' dishes={dishObjects}/>
+     <Footer year={new Date().getFullYear()}/>
+     
     </div>
   );
 }
