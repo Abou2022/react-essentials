@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 function SecretComponent(){
@@ -9,19 +9,25 @@ function RegularComponent(){
 }
 
 
-function App(props) {
-
-  // if(props.authorized){
-  //   return <SecretComponent/>
-  // }else{
-  //   return <RegularComponent/>
-  // }
- 
-  //we can rewrite like this
+function App() {
+  //usestate update the initial value
+  //happy is a initiall value we pass
+  const [emotion, setEmotion] = useState('happy')
+  //setEmotion here going to update the state
 
   return(
     <>
-    {props.authorized ? <SecretComponent/> : <RegularComponent/>}
+    <h1>Current emotion is {emotion}.</h1>
+    <button onClick={() => setEmotion('happy')}>
+    Happy
+    </button>
+    <button onClick={() => setEmotion('frustrated')}>
+    Frustrate
+    </button>
+    <button onClick={() => setEmotion('enthusiastic')}>
+    Enthuse
+    </button>
+   
     </>
   )
 }
