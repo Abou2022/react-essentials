@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function SecretComponent(){
@@ -14,6 +14,14 @@ function App() {
   //happy is a initiall value we pass
   const [emotion, setEmotion] = useState('happy')
   //setEmotion here going to update the state
+
+  //we can add more useEffect as we need
+  useEffect(() =>{
+    console.log(`It's ${emotion} around here!`)
+
+    //for example if we pass a value inside the [] use effet
+    //will keep tracking the change otherwise it gonna print only happy message
+  },[emotion])
 
   return(
     <>
