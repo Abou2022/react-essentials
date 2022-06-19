@@ -14,6 +14,8 @@ function App() {
   //happy is a initiall value we pass
   const [emotion, setEmotion] = useState('happy')
   //setEmotion here going to update the state
+  const [secondary, setSecondary] = useState('tired')
+  //setEmotion here going to update the state
 
   //we can add more useEffect as we need
   useEffect(() =>{
@@ -22,12 +24,22 @@ function App() {
     //for example if we pass a value inside the [] use effet
     //will keep tracking the change otherwise it gonna print only happy message
   },[emotion])
+  //we can add more useEffect as we need
+  useEffect(() =>{
+    console.log(`It's ${secondary} around here!`)
+
+    //for example if we pass a value inside the [] use effet
+    //will keep tracking the change otherwise it gonna print only happy message
+  },[secondary])
 
   return(
     <>
-    <h1>Current emotion is {emotion}.</h1>
+    <h1>Current emotion is {emotion} and {secondary}.</h1>
     <button onClick={() => setEmotion('happy')}>
-    Happy
+    Make  Happy
+    </button>
+    <button onClick={() => setSecondary('crabby')}>
+    Make  crabby
     </button>
     <button onClick={() => setEmotion('frustrated')}>
     Frustrate
