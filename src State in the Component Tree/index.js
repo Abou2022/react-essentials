@@ -7,6 +7,6 @@ import App from './App'
 //important app function 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-<App login='Abou2022'/>
+<App authorized={true}/>
 
 );
