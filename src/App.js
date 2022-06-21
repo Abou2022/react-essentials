@@ -16,8 +16,19 @@ function App({login}) {
   .then(setData);
   }, []);
 
+  // to fectch all data 
+  // if(data){
+  //   return <div>{JSON.stringify(data)}</div>
+  // }
+
+  //to fectch specifique information (data)
   if(data){
-    return <div>{JSON.stringify(data)}</div>
+    return (<div>
+      <h1>{data.name}</h1>
+      <h3>{data.location}</h3>
+      <h3>{data.node_id}</h3>
+      <img alt={data.login} src={data.avatar_url}/>
+    </div>);
   }
 
 
