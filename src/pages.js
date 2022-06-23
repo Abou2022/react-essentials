@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 
 export function Home(){
     return(
@@ -17,12 +17,36 @@ export function About(){
     return(
         <div>
             <h1>[About]</h1>
-            <nav>
-                <Link to='/'>Home</Link>
-            </nav>
+            {/* oulet will handler service, history and link  */}
+            <Outlet/>
+            <nav><Link to='/'>Home</Link></nav>
         </div>
     )
 }
+export function Services(){
+    return(
+        <div>
+            <h2>Our Service </h2>
+        </div>
+    )
+}
+export function CompanyHistory(){
+    return(
+        <div>
+            <h2>Our Comapany History </h2>
+        </div>
+    )
+}
+export function Location(){
+    return(
+        <div>
+            <h2>Our Location </h2>
+        </div>
+    )
+}
+
+
+
 export function Events(){
     return(
         <div>
